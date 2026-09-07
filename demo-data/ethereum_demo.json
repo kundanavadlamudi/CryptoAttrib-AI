@@ -1,0 +1,17 @@
+﻿[
+  {
+    "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "blockchain": "ethereum",
+    "source": "demo"
+  },
+  {
+    "address": "0x8ba1f109551bD432803012645Ac136ddd64DBA72",
+    "blockchain": "ethereum",
+    "source": "demo"
+  },
+  {
+    "address": "0x3f5CE5FBFe3E9afB48dF1E0eE7D2c9A4D4F5B6C7",
+    "blockchain": "ethereum",
+    "source": "demo"
+  }
+]
