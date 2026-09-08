@@ -1,4 +1,12 @@
 {
+  "0xdemovasp000000000000000000000000000003": {
+    "vasp_id": "demo_exchange",
+    "vasp_name": "Demo Exchange (offline fallback)",
+    "label": "Synthetic address used only when live Etherscan data is unavailable",
+    "currency": "ETH",
+    "source": "internal demo fallback",
+    "confidence": "demo_only"
+  },
   "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8": {
     "vasp_id": "binance",
     "vasp_name": "Binance",

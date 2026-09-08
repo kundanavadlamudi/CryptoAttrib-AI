@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 
 import etherscan_client
 import graph_engine
+from graphsense import vasp_attribution
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("main")
@@ -63,6 +64,8 @@ def analyze(req: AnalyzeRequest):
 
     traced_wallets = [w for w in hops.keys() if w != wallet]
 
+    vasp_match = vasp_attribution.find_first_vasp_in_hops(hops, wallet)
+
     return {
         "wallet": wallet,
         "network": req.network,
@@ -71,5 +74,6 @@ def analyze(req: AnalyzeRequest):
         "traced_wallets": traced_wallets,
         "hop_distances": hops,
         "graph": graph_json,
+        "vasp_match": vasp_match,
         "analysis_timestamp": datetime.now(timezone.utc).isoformat(),
     }
