@@ -10,11 +10,15 @@ import logging
 from typing import List, Dict, Any
 
 import httpx
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = logging.getLogger("etherscan_client")
 
 ETHERSCAN_API_KEY = os.getenv("ETHERSCAN_API_KEY", "")
-ETHERSCAN_BASE_URL = "https://api.etherscan.io/api"
+ETHERSCAN_BASE_URL = "https://api.etherscan.io/v2/api"
+ETHERSCAN_CHAIN_ID = 1  # 1 = Ethereum mainnet
 
 
 class EtherscanClientError(Exception):
@@ -40,6 +44,7 @@ def _normalize_tx(raw: Dict[str, Any], wallet: str) -> Dict[str, Any]:
 
 def _fetch_live(wallet: str) -> List[Dict[str, Any]]:
     params = {
+        "chainid": ETHERSCAN_CHAIN_ID,
         "module": "account",
         "action": "txlist",
         "address": wallet,
