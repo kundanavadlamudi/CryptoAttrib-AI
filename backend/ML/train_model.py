@@ -18,7 +18,7 @@ from sklearn.metrics import (
 # PATHS
 # ============================================================
 
-project_root = Path(__file__).resolve().parent.parent
+project_root = Path(__file__).resolve().parent.parent.parent
 
 input_file = (
     project_root
@@ -28,6 +28,7 @@ input_file = (
 
 model_file = (
     project_root
+    / "backend"
     / "ML"
     / "cryptoattrib_rf_model.pkl"
 )

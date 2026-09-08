@@ -11,10 +11,10 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 MODEL_PATH = (
     PROJECT_ROOT
+    / "backend"
     / "ML"
     / "cryptoattrib_rf_model.pkl"
 )
-
 model = joblib.load(MODEL_PATH)
 
 
